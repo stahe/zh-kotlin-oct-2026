@@ -1,0 +1,987 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通过示例学习 [Kotlin 2.4] 语言">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-kotlin-oct-2026/%E5%BC%95%E8%A8%80.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. 引言 - 通过示例学习 [Kotlin 2.4] 语言</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "通过示例学习 [Kotlin 2.4] 语言";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-引言" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="通过示例学习 [Kotlin 2.4] 语言" class="md-header__button md-logo" aria-label="通过示例学习 [Kotlin 2.4] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            通过示例学习 [Kotlin 2.4] 语言
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. 引言
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-kotlin-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="通过示例学习 [Kotlin 2.4] 语言" class="md-nav__button md-logo" aria-label="通过示例学习 [Kotlin 2.4] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    通过示例学习 [Kotlin 2.4] 语言
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-kotlin-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 引言
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E5%BC%95%E8%A8%80.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 引言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-2011-年至-2026-年的-kotlin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. 2011 年至 2026 年的 Kotlin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-文档内容" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. 文档内容
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-主线税款计算" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. 主线：税款计算
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-示例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. 示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-资料来源" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. 资料来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 搭建开发环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kotlin-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kotlin 语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%B1%BB-%E6%8E%A5%E5%8F%A3-%E6%95%B0%E6%8D%AE%E7%B1%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 类、接口、数据类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%B8%B8%E7%94%A8%E7%9A%84-kotlin-%E7%B1%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 常用的 Kotlin 类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 分层架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B-lambda-%E4%B8%8E%E4%BA%8B%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 函数类型、lambda 与事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%89%A7%E8%A1%8C%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 执行线程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E4%BD%BF%E7%94%A8%E5%8D%8F%E7%A8%8B%E8%BF%9B%E8%A1%8C%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 使用协程进行异步编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E4%BD%BF%E7%94%A8-jdbc-%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 使用 JDBC 访问数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Web 编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E6%9C%8D%E5%8A%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Web 服务
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 延伸阅读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E9%99%84%E5%BD%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. 附录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-引言">1. <span style="color: #2e74b5">引言</span></h1>
+<p>文档的 PDF 版本在 <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQBICbktKUWjTodakQ0xBJoXAcqqh8a0OVGi_BjkC4r0C_E?e=eQXMNG"><u><span style="color: #0563c1">这里</span></u></a>。</p>
+<p>本文档的代码在 <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQBZkYdpFJzKR6-zqiJ3WV4kAY-ydTaQgYQ_uRQxG4iP5QM?e=cRnfd6"><u><span style="color: #0563c1">这里</span></u></a>。</p>
+<p>本文档由 Anthropic 的 AI Claude 生成。它是课程 <a href="https://stahe.github.io/zh-java-oct-2026/"><u><span style="color: #0563c1">“通过示例学习 Java 25 语言</span></u></a>”（2026 年 10 月）的 Kotlin 移植版，而该课程本身又是课程 <a href="https://stahe.github.io/zh-csharp-oct-2026/"><u><span style="color: #0563c1">“使用 .NET 10 学习 C# 14 语言</span></u></a>（2026 年 10 月）的移植版，后者是对 Serge Tahé 于 2008 年 5 月编写的课程 <a href="https://stahe.github.io/zh-csharp-mai-2008/"><u><span style="color: #0563c1">“使用 .NET 3.5 Framework 学习 C# 语言 3.0 版”</span></u></a>的重写。它保留了该课程的大纲、示例和主线，并用当今的 Kotlin 重写：</p>
+<ul>
+<li>本文档使用 <strong>Kotlin 2.4</strong> （2.4.20 版，2026 年 9 月），搭配 JDK 25，即 Java 最新的 <strong>长期支持</strong>（LTS）版本。Kotlin 是一门面向 Java 虚拟机的语言：它生成与 Java 相同的中间代码，并直接使用 Java 的全部库。因此，Java 课程的读者 将看到来自 JDK 的相同的类（文件、网络、线程、日期等）和相同的框架（JUnit、Spring、Jackson、Hibernate、Spring Boot），只是用另一种语言来使用它们；</li>
+<li>在两种语言不同的地方，本文档所做的不只是翻译。Kotlin 为 Java 以不同方式处理的问题提供了自己的解决方案：内置于类型系统的 <strong>空安全</strong> 、<strong>属性</strong>、<strong>数据类</strong>、<strong>扩展函数</strong>、<strong>运算符重载</strong>、<strong>函数类型</strong>、默认参数值和具名参数，以及 <em>[when]</em> 表达式。反过来，Kotlin 没有 <strong>受检异常</strong> 或 <em>[static]</em> 成员。这些差异都会详细介绍，通常通过对比 Kotlin 代码与 Java 代码来进行；</li>
+<li>异步编程一章呈现出不同的特点：Java 使用 <em>[CompletableFuture]</em> 类和虚拟线程，而 Kotlin 提供 <strong>协程</strong>，以及 <em>[suspend]</em> 函数、<em>[launch]</em> 和 <em>[async]</em> 构造器，以及 <strong>结构化并发</strong>。这是 Kotlin 对原课程中 C# 的 <em>[async]</em> / <em>[await]</em> 的回答；</li>
+<li>所用的库是当前在 JVM 上常用的：用于测试的 <em>[JUnit 6]</em> 和 <em>[kotlin.test]</em> ，用于依赖注入的 <em>[Spring Framework 7]</em> ，用于 JSON 的 <em>[Jackson 3]</em> ，用于协程的 <em>[kotlinx.coroutines]</em> ，用于 JDBC 的驱动 <em>[MySQL Connector/J]</em> ，用于对象关系映射的 <em>[Hibernate 7]</em> ，以及用于 Web 服务的 <em>[Spring Boot 4]</em> ；项目使用 <em>[Gradle]</em>构建，其脚本本身就是用 Kotlin 编写的。</li>
+</ul>
+<p>本文档不是一门全面的课程。与其所源自的资料一样，它面向已经熟悉编程、希望学习 Kotlin 基础的读者。它采用示例的方式：二百多个程序（三百多个 Kotlin 文件），大多数很短，并带有逐行注释。</p>
+<h2 id="11-2011-年至-2026-年的-kotlin">1.1. <span style="color: #2e74b5">2011 年至 2026 年的 Kotlin</span></h2>
+<p>Kotlin 由 <strong>JetBrains</strong>公司于 2011 年 7 月推出，该公司是 IDE IntelliJ IDEA 的发行商，当时正在寻找一门比 Java 更简洁、更安全、同时又与之兼容的语言，用来编写自己的工具：Kotlin 程序被编译为 <strong>字节码</strong>，由 <strong>Java 虚拟机</strong> （JVM）执行，既可以调用 Java 代码，也可以被 Java 代码调用。其名称来自芬兰湾中靠近圣彼得堡的一座岛屿，设计它的团队曾在那里工作。</p>
+<p>主要里程碑：</p>
+<ul>
+<li><strong>2016 年：Kotlin 1.0</strong>，第一个稳定版本，并附带兼容性承诺；</li>
+<li><strong>2017 年</strong>：Google 宣布官方支持使用 Kotlin 开发 Android 应用；<strong>2019 年</strong>，Android 变为“Kotlin 优先”：Kotlin 成为新 Android 应用的推荐语言；</li>
+<li><strong>2018 年：Kotlin 1.3</strong>，使 <strong>协程</strong>趋于稳定，这是 Kotlin 对异步编程的解答（第 9 章）；</li>
+<li>该语言由 JetBrains 开发；<strong>Kotlin 基金会</strong>由 JetBrains 和 Google 于 2017 年创立，负责监督其演进，每个阶段都要经过公开提案（“KEEP”，Kotlin Evolution and Enhancement Process）；</li>
+<li><strong>2024 年：Kotlin 2.0</strong>，带来名为 <strong>K2</strong>的新编译器，它更快，并且在跟踪代码中的类型（智能类型转换）方面更出色；</li>
+<li>Kotlin 也面向 JVM 以外的平台：JavaScript、WebAssembly 和原生代码（Kotlin/Native，iOS）。本文档只涉及 JVM 上的 Kotlin；</li>
+<li>自 2.0 版起，大约每六个月发布一个 <strong>新的语言版本</strong> （2.1.0、2.2.0、2.3.0、2.4.0……）；在两者之间，<strong>工具版本</strong> （2.x.20）会在不改变语言的情况下改进工具和标准库。本文档使用 2026 年 9 月发布的 2.4.20 版。新特性通常先作为 <strong>实验性特性</strong>引入；必须显式启用它们（通过编译器选项或 <em>[@OptIn]</em> 注解），之后才会在后续版本中变得稳定。</li>
+</ul>
+<p>下表总结了本文档介绍的语言主要新特性，并指出了它们出现的章节：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>版本</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>年份</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>主要新特性</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>章</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2016</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">空安全、属性、数据类、扩展函数、lambda、<i><b>[when]</b></i>、运算符重载</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4, 7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2017</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">类型别名 <i><b>[typealias]</b></i>、绑定引用 <i><b>[object::function]</b></i>、协程（实验性）</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4, 7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2018</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">稳定的协程、<i><b>[main]</b></i> 函数可无参数</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2, 3, 9</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2020</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">函数式接口 <i><b>[fun interface]</b></i>、Kotlin 接口的 SAM 转换</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2021</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">无符号类型（[UInt]……）和稳定的 <i><b>[value class]</b></i> 类、密封接口</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 1.9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2023</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[..&lt;]</b></i> 运算符、枚举的 <i><b>[entries]</b></i> 属性、<i><b>[data object]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 12</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 2.0</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2024</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">K2 编译器：更精确的智能类型转换</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 2.2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2025</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[when] </b></i>中的守卫条件（<i><b>[is Int if x &gt; 0 -&gt;]</b></i>），带多个 <i><b>[$]</b></i> 的插值</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 2.3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2025</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">支持 Java 25</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Kotlin 2.4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2026</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">在 2.4.20 版中，<i><b>[kotlinr]</b></i> 启动器取代了 <i><b>[kotlin]</b></i> 命令</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td></tr></table>
+
+<p>在库和工具方面，新特性包括：构建工具 <em>[Gradle]</em> 及其 Kotlin 脚本（<em>[build.gradle.kts]</em>）、Kotlin 标准库的集合及其高阶函数、序列、协程和流（<em>[Flow]</em>），以及在 Kotlin 中使用的主要 Java 生态系统框架：JUnit、Spring、Jackson、Hibernate 和 Spring Boot。</p>
+<h2 id="12-文档内容">1.2. <span style="color: #2e74b5">文档内容</span></h2>
+<p>本文档包括以下章节：</p>
+<ul>
+<li><strong>第 2 章</strong>：搭建开发环境（JDK 25、IntelliJ IDEA、编译器 <em>[kotlinc]</em>、Gradle）；</li>
+<li><strong>第 3 章</strong>：语言基础（类型、空安全、运算符、<em>[if]</em> 和 <em>[when]</em>、循环、异常、枚举、函数参数）；</li>
+<li><strong>第 4 章</strong>：类、属性、继承、密封类、运算符重载、接口、泛型、数据类、扩展函数；</li>
+<li><strong>第 5 章</strong>：常用的 Kotlin 类：字符串、数组、集合、序列、文本文件和二进制文件、使用 Jackson 处理 JSON、正则表达式；</li>
+<li><strong>第 6 章</strong>：分层架构、使用 JUnit 6 的单元测试，以及使用 Spring 的依赖注入；</li>
+<li><strong>第 7 章</strong>：函数类型、lambda 表达式和事件；</li>
+<li><strong>第 8 章</strong>：执行线程、同步和虚拟线程；</li>
+<li><strong>第 9 章</strong>：使用协程的异步编程；</li>
+<li><strong>第 10 章</strong>：使用 JDBC 访问数据库；</li>
+<li><strong>第 11 章</strong>：Hibernate；</li>
+<li><strong>第 12 章</strong>：Web 编程（TCP/IP、TCP 客户端和服务器、使用 <em>[HttpClient]</em>的 HTTP、SMTP）；</li>
+<li><strong>第 13 章</strong>：使用 Spring Boot 的 Web 服务；</li>
+<li><strong>第 14 章</strong>：进一步学习；</li>
+<li><strong>附录</strong>：安装 Laragon 和 MySQL，Gradle 项目使用的依赖。</li>
+</ul>
+<h2 id="13-主线税款计算">1.3. <span style="color: #2e74b5">主线：税款计算</span></h2>
+<p>本文档反复讨论同一个问题：为只需申报工资的纳税人计算所得税。所用的税率档是最初的版本（2003 年收入）：它已不再适用，但对我们的目的来说已经足够，我们的目的是用若干种不同的方式编写同一个应用程序。它分九个版本实现：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>版本</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>章</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>内容</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">单个程序：经过验证的输入、计算、显示</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">类和接口：<i>[TaxBracket], [ITax], [AbstractTax], [HardwiredTax]</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">从文本文件或 JSON 文件读取计算数据</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">一个单程序内的分层架构（<i>[dao]</i>、<i>[business]</i>、<i>[ui]）</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">每层一个 Gradle 子项目、单元测试，以及通过依赖注入集成各层</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">一个 <i>[dao]</i> 层，使用 JDBC 从 MySQL 数据库读取数据</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">7</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">11</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">一个 <i>[dao]</i> 层，使用 Hibernate 编写</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">8</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">12</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">TCP 税款计算服务器及其客户端</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">13</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">一个用于税款计算的 REST Web 服务、一个控制台客户端和一个 Web 客户端</div></td></tr></table>
+
+<p>从第 5 版开始，后续版本 <strong>复用</strong> 第 5 版的各层，只替换发生变化的那一层：这正是第 6 章介绍的分层架构的全部意义所在。</p>
+<h2 id="14-示例">1.4. <span style="color: #2e74b5">示例</span></h2>
+<p>本文档中的代码组织在一个名为 <em>[kotlin-oct-2026]</em>的文件夹中，每章对应一个子文件夹。每个子文件夹都是一个 Gradle 项目（或由多个项目组成的 Gradle 构建），可以直接在 IntelliJ IDEA 中打开：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>kotlin-oct-2026/
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├── 02-installation/       Hello.kt, first Gradle projects
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├── 03-basics/             Basics01.kt to Basics31.kt, Tax1.kt
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>├── 04-classes/            Classes01.kt to Classes26.kt, multi-file programs, TaxV2
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>├── 05-classes-kotlin/     strings, arrays, collections, sequences, files, JSON, regex, TaxV3
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>├── 06-architectures/      DemoTests, TaxV4, TaxV5 (layers, tests, dependency injection)
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>├── 07-lambdas/            Lambdas01.kt to Lambdas13.kt
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>├── 08-threads/            Threads01.kt to Threads31.kt
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>├── 09-async/              Async01.kt to Async33.kt (coroutines)
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>├── 10-jdbc/               SQL scripts, jdbc subproject (Jdbc01 to Jdbc10), TaxV6
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>├── 11-hibernate/          Hibernate subprojects, TaxV7
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>├── 12-internet/           Internet01.kt to Internet19.kt, TaxV8
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>└── 13-web-services/       Spring Boot web services and their clients (WsTax, ClientWsTax: version 9)
+</code></pre></div></td></tr></table></div>
+<p>每个小程序都是一个 Kotlin 文件，存放在以其命名的包中（<em>[src/main/kotlin/basics04/Basics04.kt], package [basics04]</em>）。你可以在 IntelliJ IDEA 中点击其 <em>[main]</em> 函数旁边的绿色三角形来运行它，也可以通过 Gradle 在命令行中运行（<strong><em>[gradlew -q run -Pmain=basics04.Basics04Kt]</em></strong>，第 2 章）。需要外部库的程序（Jackson、JUnit、Spring、MySQL 驱动、Hibernate、Spring Boot）必须在项目的 <em>[build.gradle.kts]</em> 文件中声明它：Gradle 会在第一次构建时从 Maven Central 仓库下载它。</p>
+<p>本文档中的所有程序都已由 Kotlin 2.4.20 编译器编译，没有错误或警告，编译时使用了将所有警告视为错误的选项（<strong><em>[allWarningsAsErrors]</em></strong>），然后在 JDK 25 上运行。本文档中重现的结果就来自这些运行。第 2 章到第 4 章的结果是在法语语言和国家设置（fr-FR）下得到的，就像在法语版 Windows 机器上一样：格式化的浮点数以小数逗号显示，日期也是法语的；后续章节的结果是在英语设置下得到的。两点说明：</p>
+<ul>
+<li>Kotlin 编译器和 JDK 的错误消息（异常消息）是英文的：它们没有法语翻译；</li>
+<li>示例是在 Linux 上运行的。在大多数情况下这没有区别：JVM 上的 Kotlin 是跨平台的。少数差异（用 / 而不是 \ 的文件路径、终端命令、用 <strong><em>[./gradlew]</em></strong> 代替 <strong><em>[gradlew]</em></strong>）会在出现的地方加以说明。</li>
+</ul>
+<p>多线程、异步或网络程序的结果，以及测得的时长，可能每次运行都有所不同：注释着重说明可重现的内容。</p>
+<h2 id="15-资料来源">1.5. <span style="color: #2e74b5">资料来源</span></h2>
+<p>本文档的主要资料来源是：</p>
+<ul>
+<li>Kotlin 官方文档：网站 <a href="https://kotlinlang.org/docs/home.html"><u><span style="color: #0563c1"> https://kotlinlang.org/docs</span></u></a>（语言指南、教程、各版本的“What’s New”页面）以及标准库文档：<a href="https://kotlinlang.org/api/core/kotlin-stdlib/"><u><span style="color: #0563c1"> https://kotlinlang.org/api/core/kotlin-stdlib/</span></u></a>；</li>
+<li>协程指南：<a href="https://kotlinlang.org/docs/coroutines-guide.html"><u><span style="color: #0563c1"> https://kotlinlang.org/docs/coroutines-guide.html</span></u></a>；</li>
+<li>语言演进提案（KEEP）：<a href="https://github.com/Kotlin/KEEP"><u><span style="color: #0563c1"> https://github.com/Kotlin/KEEP</span></u></a>；</li>
+<li>Java 文档，针对 API 和 SE 25，涉及 JDK 中的类：<a href="https://docs.oracle.com/en/java/javase/25/"><u><span style="color: #0563c1"> https://docs.oracle.com/en/java/javase/25/</span></u></a>；</li>
+<li>Gradle 文档（<a href="https://docs.gradle.org/"><u><span style="color: #0563c1">https://docs.gradle.org</span></u></a>）以及各个库的文档：JUnit（<a href="https://docs.junit.org/"><u><span style="color: #0563c1">https://docs.junit.org</span></u></a>）、Spring（<a href="https://spring.io/projects"><u><span style="color: #0563c1">https://spring.io/projects</span></u></a>）、Hibernate（<a href="https://hibernate.org/orm/documentation/"><u><span style="color: #0563c1">https://hibernate.org/orm/documentation/</span></u></a>）、Jackson（<a href="https://github.com/FasterXML/jackson"><u><span style="color: #0563c1">https://github.com/FasterXML/jackson</span></u></a>）；</li>
+<li>两本参考书：Sebastian Aigner、Roman Elizarov、Svetlana Isakova 和 Dmitry Jemerov 所著的“Kotlin in Action”（Manning 出版社，第 2 版）和 Marcin Moskała 所著的“Effective Kotlin”；关于线程，Brian Goetz 等人所著的“Java Concurrency in Practice”（Addison-Wesley 出版社）仍然是一本极好的读物。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本课程由 Anthropic 的 AI <strong>Claude</strong> 应 <strong>Serge Tahé</strong> 的请求编写，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

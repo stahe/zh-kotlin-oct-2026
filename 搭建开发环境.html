@@ -1,0 +1,1718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通过示例学习 [Kotlin 2.4] 语言">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-kotlin-oct-2026/%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html">
+      
+      
+        <link rel="prev" href="%E5%BC%95%E8%A8%80.html">
+      
+      
+        <link rel="next" href="kotlin-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. 搭建开发环境 - 通过示例学习 [Kotlin 2.4] 语言</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "通过示例学习 [Kotlin 2.4] 语言";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-搭建开发环境" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="通过示例学习 [Kotlin 2.4] 语言" class="md-header__button md-logo" aria-label="通过示例学习 [Kotlin 2.4] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            通过示例学习 [Kotlin 2.4] 语言
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. 搭建开发环境
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-kotlin-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="通过示例学习 [Kotlin 2.4] 语言" class="md-nav__button md-logo" aria-label="通过示例学习 [Kotlin 2.4] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    通过示例学习 [Kotlin 2.4] 语言
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-kotlin-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%BC%95%E8%A8%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 引言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 搭建开发环境
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 搭建开发环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-jdk-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. JDK 25
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. JDK 25">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-安装" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-jdk-的命令" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. JDK 的命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-kotlin-命令行编译器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Kotlin 命令行编译器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Kotlin 命令行编译器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-安装" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1. 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-编译器命令" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2. 编译器命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Gradle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Gradle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-gradle-的作用" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1. Gradle 的作用
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-gradle-包装器无需安装" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2. Gradle 包装器：无需安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-gradle-命令" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3. Gradle 命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#234-maven-central-与-gradle-缓存" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.4. Maven Central 与 Gradle 缓存
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#235-kotlin-语法dsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.5. Kotlin 语法：DSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-编辑器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. 编辑器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. 编辑器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.1. IntelliJ IDEA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.2. VS Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-android-studio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.3. Android Studio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-示例程序hellokt-文件" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. 示例程序：Hello.kt 文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. 示例程序：Hello.kt 文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-程序" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. 程序
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-编译与执行" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. 编译与执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-编译器生成了什么" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.3. 编译器生成了什么
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-gradle-项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Gradle 项目
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6. Gradle 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-项目结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.1. 项目结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-编译与执行" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.2. 编译与执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-多模块项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. 多模块项目
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7. 多模块项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271-多项目构建" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.1. 多项目构建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272-具有多个-main-函数的项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.2. 具有多个 main 函数的项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273-每个程序一个包" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7.3. 每个程序一个包
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-本文档中的示例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. 本文档中的示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kotlin-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kotlin 语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%B1%BB-%E6%8E%A5%E5%8F%A3-%E6%95%B0%E6%8D%AE%E7%B1%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 类、接口、数据类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%B8%B8%E7%94%A8%E7%9A%84-kotlin-%E7%B1%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 常用的 Kotlin 类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 分层架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B-lambda-%E4%B8%8E%E4%BA%8B%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 函数类型、lambda 与事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%89%A7%E8%A1%8C%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 执行线程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E4%BD%BF%E7%94%A8%E5%8D%8F%E7%A8%8B%E8%BF%9B%E8%A1%8C%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 使用协程进行异步编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E4%BD%BF%E7%94%A8-jdbc-%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 使用 JDBC 访问数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Web 编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E6%9C%8D%E5%8A%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Web 服务
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 延伸阅读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E9%99%84%E5%BD%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. 附录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-搭建开发环境">2. <span style="color: #2e74b5">搭建开发环境</span></h1>
+<p>Kotlin 开发者的工作环境由三个相互独立的组成部分构成：</p>
+<ul>
+<li><strong>JDK</strong> （“Java Development Kit”）：如本文档所用，Kotlin 被编译为 <strong>字节码</strong> ，并由 <strong>Java 虚拟机</strong> （JVM）执行，就像 Java 程序一样。JDK 提供这个虚拟机、运行程序的 <em>[java]</em> 命令、标准的 Java SE 库（Kotlin 直接使用它们：文件、网络、日期、线程等），以及 <em>[javap]</em> 或 <em>[jar]</em>等工具；</li>
+<li>项目 <strong>构建</strong>工具，这里是 <strong>Gradle</strong>：它下载 Kotlin 编译器和项目所需的库，编译项目，运行其测试，并进行打包；</li>
+<li>一个 <strong>编辑器</strong> 或 <strong>IDE</strong> （集成开发环境）：<em>[IntelliJ IDEA]</em>由创建 Kotlin 的公司设计，是自然的选择；<em>[VS Code]</em> 配合 Kotlin 扩展是另一种选择。IDE 以 JDK 为基础，并且能够读取 Gradle 项目。</li>
+</ul>
+<p>Kotlin 编译器本身不在此列：Gradle 会为每个项目下载它，IntelliJ IDEA 也内置了它。不过，你也可以使用 <em>[kotlinc]</em> 命令单独安装它，用来编译单个文件：我们会在第一个程序中这样做，但这是可选的。</p>
+<p>本文档对所有操作都使用 <em>[java]</em>、<em>[kotlinc]</em>和 <em>[gradlew]</em> 命令：无论你选择哪种编辑器，它们在 Windows、Linux 和 macOS 上的工作方式都相同。</p>
+<h2 id="21-jdk-25">2.1. <span style="color: #2e74b5">JDK 25</span></h2>
+<h3 id="211-安装">2.1.1. <span style="color: #1f4d78">安装</span></h3>
+<p>JDK 有多种发行版，它们都由 OpenJDK 源代码构建，对我们的用途来说是等价的。我们推荐 <strong>Eclipse Temurin</strong>，这是 Eclipse 基金会提供的免费开源发行版，可从 <a href="https://adoptium.net/"><u><span style="color: #0563c1"> https://adoptium.net</span></u></a>下载：在那里选择版本 <strong>25—LTS</strong>、操作系统和软件包类型（在 Windows 上是 <em>[.msi]</em> 安装程序）。在 Windows 上，你也可以在终端（PowerShell 或命令提示符）中使用 <em>[winget]</em> 包管理器安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>winget install EclipseAdoptium.Temurin.25.JDK
+</code></pre></div></td></tr></table></div>
+<p>必须选择 <strong>JDK</strong> （它包含全部内容），而不是只选择 JRE（它只能运行预编译的程序）。在 Windows 上安装时，请勾选把 JDK 添加到 <em>[PATH]</em> 并设置 <em>[JAVA_HOME]</em> 环境变量的选项：Gradle、<em>[kotlinc]</em> 编译器和 IDE 文件都用它来定位 JDK。在 Linux 上，JDK 可在主要发行版的软件仓库中获得（例如在 Ubuntu 上使用 <strong><em>[sudo apt install openjdk-25-jdk]</em></strong> ）。</p>
+<p>安装完成后，打开一个 <strong>新的</strong> 终端，验证 <em>[java]</em> 命令可用并显示 JDK 的版本：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&gt; java --version
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>openjdk 25.0.4 2026-07-21 LTS
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>OpenJDK Runtime Environment Temurin-25.0.4+7 (build 25.0.4+7-LTS)
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>OpenJDK 64-Bit Server VM Temurin-25.0.4+7 (build 25.0.4+7-LTS, mixed mode, sharing)
+</code></pre></div></td></tr></table></div>
+<p>这些结果是使用 JDK Temurin 25.0.4 得到的，本文档就是用它编写的。确切的版本取决于安装日期：错误修复更新每季度发布一次。所有 JDK 25.0.x 版本都适用于本文档。同一台计算机上可以共存多个 JDK 实例：在 <em>[PATH]</em> 目录中找到的第一个会响应 <em>[java]</em> 命令。</p>
+<p>JDK 还包含 Java 编译器 <em>[javac]</em> （<strong><em>[javac --version]</em></strong> 显示 <em>[javac 25.0.4]</em>）。我们用不到它：Kotlin 编译器自己生成字节码。但它就在那里，而且一个 Gradle 项目可以轻松地混合 Kotlin 和 Java 文件，它们能协同工作。</p>
+<h3 id="212-jdk-的命令">2.1.2. <span style="color: #1f4d78">JDK 的命令</span></h3>
+<p>下面是我们将使用的 JDK 命令：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>命令</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>作用</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[java -jar program.jar]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">运行 <i>[.jar]</i> 归档中包含的程序，其清单文件指定了主类</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[java -cp classes MyClass]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">执行已编译类的 <i>[main] </i>函数，该类在类路径中查找（<i><b>[-cp]</b></i>，“class path”）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[javap -cp classes MyClass]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">显示已编译类的成员：我们将用 它来查看 Kotlin 编译器生成了什么</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[jar]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">创建或读取 <i>[.jar]</i> 归档（已编译类的 ZIP 文件）</div></td></tr></table>
+
+<p>JDK 还提供交互式解释器 <em>[jshell]</em>，但它只接受 Java 语句。要在不编写程序的情况下测试 Kotlin 表达式，请改用下文介绍的 IntelliJ IDEA 工具。</p>
+<h2 id="22-kotlin-命令行编译器">2.2. <span style="color: #2e74b5">Kotlin 命令行编译器</span></h2>
+<h3 id="221-安装">2.2.1. <span style="color: #1f4d78">安装</span></h3>
+<p>此安装是 <strong>可选的</strong>：Gradle 项目不需要它，IntelliJ IDEA 也包含自己的编译器。它使你可以在终端中编译并运行独立的 Kotlin 文件，而无需创建项目。</p>
+<p>编译器可以从 Kotlin 项目的发布版本页面下载，具体是 GitHub（<a href="https://github.com/JetBrains/kotlin/releases"><u><span style="color: #0563c1">https://github.com/JetBrains/kotlin/releases</span></u></a>）：在 2.4.20 版的“Assets”部分，下载归档 <em>[kotlin-compiler-2.4.20.zip]</em>。将其解压到一个文件夹，例如 <em>[C:\Program Files\kotlinc]</em>，并将其子文件夹 <em>[bin]</em> 添加到 <em>[PATH]</em> （Windows：“编辑系统环境变量”）。你也可以使用包管理器：在 Windows 上使用 <strong><em>[scoop install kotlin]</em></strong> （借助 <a href="https://scoop.sh/"><u><span style="color: #0563c1">Scoop</span></u></a>），或在 Linux 和 macOS 上使用 <a href="https://sdkman.io/"><u><span style="color: #0563c1">SDKMAN!</span></u></a>（<strong><em>[sdk install kotlin 2.4.20]</em></strong>）。编译器需要 JDK，它通过 <em>[JAVA_HOME]</em> 变量或 <em>[PATH]</em> 变量来定位 JDK。</p>
+<p>在新终端中验证安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&gt; kotlinc -version
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>info: kotlinc-jvm 2.4.20 (JRE 25.0.4+7-LTS)
+</code></pre></div></td></tr></table></div>
+<p>编译器版本（2.4.20）后面跟着运行它的 JVM 版本（JDK 25）。</p>
+<h3 id="222-编译器命令">2.2.2. <span style="color: #1f4d78">编译器命令</span></h3>
+<p><em>[bin]</em> 目录包含两个主要命令：<em>[kotlinc]</em> （编译器）和 <em>[kotlinr]</em> （启动器，“runner”）：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>命令</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>作用</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[kotlinc File.kt -d classes]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译一个或多个源文件，并将生成的 <i>[.class]</i> 文件放入 <i>[classes]</i> 文件夹</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[kotlinc File.kt -include-runtime -d prog.jar]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译并生成名为 <i>[.jar], </i>的可执行归档，其中还包含 Kotlin 标准库</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[kotlinr -cp classes MyClass]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">与 <i><b>[java -cp classes MyClass]</b></i>相同，但会把 Kotlin 标准库添加到类路径中</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[kotlinr script.main.kts]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">运行 Kotlin <b>脚本 </b>（文件 <i>[.main.kts]</i>），没有可见的编译步骤</div></td></tr></table>
+
+<p>Kotlin 脚本是一系列从上到下执行的指令，没有 <em>[main]</em> 函数。例如，下面的脚本 <em>[essai.main.kts]</em>：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Kotlin "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2.4</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>运行结果如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>&gt; kotlinr essai.main.kts
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>10
+</code></pre></div></td></tr></table></div>
+<p>在 Kotlin 2.4.20 之前，该启动器名为 <em>[kotlin]</em>；在 Kotlin 2.4.20 中它被重命名为 <em>[kotlinr]</em> ，以避免与另一个命令 <em>[kotlin]</em> 发生命名冲突，后者属于“Kotlin Toolchain”工具。旧名称在 2.4.20 版编译器中仍然有效（并未被正式弃用），但 Kotlin 文档现在推荐使用 <em>[kotlinr]</em>。</p>
+<p>不带任何参数时，<em>[kotlinc]</em> 命令曾用于启动交互式解释器（“REPL”，相当于 <em>[jshell]</em>）。此功能现已被弃用：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>&gt; kotlinc
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>error: Kotlin REPL is deprecated and should be enabled explicitly for now; please use the '-Xrepl' option
+</code></pre></div></td></tr></table></div>
+<p>要试验几行 Kotlin 代码，应改用 IntelliJ IDEA 创建的 <strong>草稿文件</strong> （“File / New / Scratch File”，选择 Kotlin 语言），它会在每一行旁边显示结果。</p>
+<h2 id="23-gradle">2.3. <span style="color: #2e74b5">Gradle</span></h2>
+<h3 id="231-gradle-的作用">2.3.1. <span style="color: #1f4d78">Gradle 的作用</span></h3>
+<p>实际的应用程序会使用不属于 JDK 或 Kotlin 标准库的 <strong>库</strong> ：数据库驱动、测试框架、Hibernate、Spring、协程……它们以 <em>[.jar]</em> 归档的形式通过公共仓库 <strong>Maven Central</strong> （<a href="https://central.sonatype.com/"><u><span style="color: #0563c1">https://central.sonatype.com</span></u></a>）分发。构建工具读取项目描述来确定它需要哪些库，下载它们（连同它们所依赖的库），然后编译、测试并打包项目。</p>
+<p>Java 世界中的两大构建工具是 <strong>Maven</strong> （本文档所依据的 Java 课程使用它）和 <strong>Gradle</strong>。Kotlin 可以与两者配合使用，但 Gradle 是 Kotlin 生态系统中事实上的标准：Android 以及 IntelliJ IDEA 创建的 Kotlin 项目都使用它，而且它的构建文件是用……Kotlin 编写的。本文档使用 <strong>Gradle 9.8</strong>。</p>
+<h3 id="232-gradle-包装器无需安装">2.3.2. <span style="color: #1f4d78">Gradle 包装器：无需安装</span></h3>
+<p>无需安装 Gradle。本文档中的每个项目都自带 Gradle <strong>包装器</strong>——一个由位于项目根目录的三个文件组成的小型启动器：</p>
+<ul>
+<li><em>[gradlew]</em>：适用于 Linux 和 macOS 的启动脚本（<strong><em>[./gradlew]</em></strong>）；</li>
+<li><em>[gradlew.bat]</em>：适用于 Windows 的同一脚本（<strong><em>[gradlew]</em></strong>）；</li>
+<li><em>[gradle/wrapper]</em> 文件夹，其中包含启动程序（<em>[gradle-wrapper.jar]</em>）及其配置（<em>[gradle-wrapper.properties]</em>）。</li>
+</ul>
+<p>文件 <em>[gradle-wrapper.properties]</em> 指定要使用的 Gradle 版本：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="na">distributionUrl</span><span class="o">=</span><span class="s">https</span><span class="se">\:</span><span class="s">//services.gradle.org/distributions/gradle-9.8.0-bin.zip</span>
+</code></pre></div></td></tr></table></div>
+<p>第一次运行时，<em>[gradlew]</em> 会下载这个版本的 Gradle 并存储在计算机上；之后再运行时，直接使用它。因此，每个项目都使用编写它时所用的 Gradle 版本，而不论计算机上安装的是哪个版本。Gradle 运行只需要一个 JDK，它通过 <em>[JAVA_HOME]</em> 变量或 <em>[PATH]</em> 变量找到它。</p>
+<p>在本文档中，命令采用 Windows 格式书写（<strong><em>[gradlew build]</em></strong>）；在 Linux 或 macOS 上，应写成 <strong><em>[./gradlew build]</em></strong>。在 PowerShell 中，还必须写成 <strong><em>[.\gradlew build]</em></strong>。</p>
+<p>如果你仍想使用 <em>[gradle]</em> 命令（例如用 <strong><em>[gradle init]</em></strong> 创建项目），请从 <em>[gradle-9.8.0-bin.zip]</em> 归档下载 <a href="https://gradle.org/releases/"><u><span style="color: #0563c1"> https://gradle.org/releases</span></u></a>，解压后将其 <em>[bin]</em> 子文件夹添加到 <em>[PATH]</em>；或者使用 <strong><em>[scoop install gradle]</em></strong> 或 <strong><em>[sdk install gradle]</em></strong>。然后验证安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>&gt; gradle --version
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>------------------------------------------------------------
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Gradle 9.8.0
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>------------------------------------------------------------
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>Build time:    2026-09-24 13:40:00 UTC
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>Revision:      a927be5e08efe79e0b87ada06c762dde6bb9f8b8
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>Kotlin:        2.4.10
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a>Groovy:        4.0.33
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>Ant:           Apache Ant(TM) version 1.10.17 compiled on April 6 2026
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>Launcher JVM:  25.0.4 (Eclipse Adoptium 25.0.4+7-LTS)
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>Daemon JVM:    /home/claude/tools/jdk-25.0.4+7 (no Daemon JVM specified, using current Java home)
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>OS:            Linux 6.18.44-fc-v64 amd64
+</code></pre></div></td></tr></table></div>
+<p>这些结果是在 Linux 上得到的。<em>[Kotlin:]</em> 这一行给出了 <strong>集成在 Gradle 中的 Kotlin 版本</strong>，它用于读取 <em>[.gradle.kts]</em> 构建文件：它与用于编译我们程序的 Kotlin 编译器版本（2.4.20）无关，后者由各个项目设定。<em>[Launcher JVM]</em> 这一行表示运行 Gradle 的 JDK。</p>
+<h3 id="233-gradle-命令">2.3.3. <span style="color: #1f4d78">Gradle 命令</span></h3>
+<p><em>[gradlew]</em> 命令后面跟一个或多个 <strong>任务</strong>；它在项目的根目录中输入，即包含 <em>[settings.gradle.kts]</em> 文件的目录：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>命令</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>作用</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew build]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译 <i>[src/main/kotlin]</i> 的源代码，运行测试，并创建项目归档 <i>[.jar] </i>于 <i>[build/libs]</i> 中</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew run]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">先编译，再运行项目的主类（<i>[application]</i> 插件）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew test]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">先编译，再运行 <i>[src/test/kotlin] </i>的单元测试（第 6 章）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew clean]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">删除 <i>[build]</i> 文件夹</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew tasks]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">显示项目中可用任务的列表</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew installDist]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">在 <i>[build/install]</i> 中创建程序的可安装版本：其归档和启动脚本</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[gradlew bootRun]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">运行 Spring Boot 应用程序（第 13 章）</div></td></tr></table>
+
+<p>任务之间相互依赖：运行 <em>[run]</em> 也会触发编译，而且 Gradle 只重新运行自上次构建以来发生变化的部分。<strong><em>[-q]</em></strong> （“quiet”）选项会抑制 Gradle 消息，只显示被执行程序的消息；<strong><em>[-Pname=value]</em></strong> 选项设置构建文件可以读取的 <strong>属性</strong> ：我们将用它来选择要运行哪个程序。由 <em>[run]</em> 启动的程序的参数通过 <strong><em>[--args=&quot;a b&quot;]</em></strong> 选项传递。</p>
+<p>在项目中运行的第一条命令会很慢：Gradle 会启动一个后台进程（Gradle“守护进程”），它会保持活动几个小时以加快后续命令的速度，并下载项目所需的内容。</p>
+<h3 id="234-maven-central-与-gradle-缓存">2.3.4. <span style="color: #1f4d78">Maven Central 与 Gradle 缓存</span></h3>
+<p>Gradle 下载的库存储在本地的 Gradle <strong>缓存</strong>中，即 <em>[%USERPROFILE%\.gradle\caches]</em> 文件夹（Linux 和 macOS：[~/.gradle/caches]）。它们只下载一次，之后由所有项目重复使用。因此，第一次构建项目时需要互联网连接。同一个 <em>[.gradle]</em> 文件夹在 <em>[wrapper/dists]</em>中还包含由包装器下载的 Gradle 版本。</p>
+<p>库由其 <strong>坐标</strong>标识——用冒号分隔的三个名称：组（通常是反向域名，例如 <em>[org.hibernate.orm]</em>）、库名称及其版本，例如 <em>[tools.jackson.core:jackson-databind:3.1.5]</em>。这些坐标就是你在项目构建文件中要填写的内容，可以通过在 Maven Central 网站上搜索该库找到它们。</p>
+<h3 id="235-kotlin-语法dsl">2.3.5. <span style="color: #1f4d78">Kotlin 语法：DSL</span></h3>
+<p>项目的构建文件名为 <em>[build.gradle.kts]</em>。扩展名 <em>[.kts]</em> 表示它是一个 <strong>Kotlin 脚本</strong>：该文件使用一种基于 Kotlin 语法构建的专用语言（“DSL”，“Domain Specific Language”，领域特定语言）编写。Gradle 还支持用 Groovy 编写的 <em>[build.gradle]</em> 文件，它们见于较旧的项目；自 Gradle 8.2 起，Kotlin DSL 已成为默认格式。下面是一个典型的节选：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">"jvm"</span><span class="p">)</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s">"2.4.20"</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="n">application</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="p">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"tools.jackson.core:jackson-databind:3.1.5"</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>即使还不了解 Kotlin，你也可以把这段文本当作配置来阅读：</p>
+<ul>
+<li>一个名称后面跟着用花括号括起来的块（<strong><em>[plugins { ... }]</em></strong>、<strong><em>[dependencies { ... }]</em></strong>）就是配置的一个 <strong>节</strong> 。在 Kotlin 中，这是一次函数调用，它接受一个代码块作为参数（即 <strong>lambda</strong>，第 7 章）；</li>
+<li><strong><em>[kotlin(&quot;jvm&quot;)]</em></strong> 和 <strong><em>[implementation(&quot;...&quot;)]</em></strong> 是函数调用；字符串用双引号括起来；</li>
+<li><strong><em>[version = &quot;1.0&quot;]</em></strong> 为项目属性赋值。</li>
+</ul>
+<p>这种格式的一个优点是，IntelliJ IDEA 把它识别为 Kotlin 代码：它提供代码补全，并在你输入时标出错误。</p>
+<h2 id="24-编辑器">2.4. <span style="color: #2e74b5">编辑器</span></h2>
+<h3 id="241-intellij-idea">2.4.1. <span style="color: #1f4d78">IntelliJ IDEA</span></h3>
+<p><a href="https://www.jetbrains.com/idea/"><u><span style="color: #0563c1">IntelliJ IDEA</span></u></a>由 JetBrains 公司出品，是本文档推荐的编辑器。JetBrains 也是开发 Kotlin 的公司（该语言的第一个稳定版本发布于 2016 年），并持续开发它：IntelliJ IDEA 内置了对 Kotlin 的支持，无需任何扩展，而且它是最紧跟语言演进的版本。其基本功能对本文档来说绰绰有余，并且是免费的。</p>
+<p>IntelliJ IDEA 能识别 Gradle 项目：选择“File / Open”，然后选择包含 <em>[settings.gradle.kts]</em> 文件的文件夹；IntelliJ 会启动 Gradle 读取项目（你可以在“Build”窗口中监视这一过程），下载库，然后显示“Gradle”视图，通过它可以访问项目的所有任务。然后，你可以点击 <strong>绿色三角形</strong> 来运行程序，该三角形位于其 <em>[main]</em> 函数旁边的边栏中（<em>[Ctrl-Shift-F10]</em>），或者点击测试函数旁边的同样三角形来运行测试。你在“File / Project Structure / SDK”中指定要使用的 JDK；对于 Gradle 项目，通常由项目的 <strong><em>[jvmToolchain(25)]</em></strong> 声明（见下文）来指定用于编译的 JDK。</p>
+<p>IntelliJ IDEA 还提供 Kotlin 专属的功能：将 Java 文件自动转换为 Kotlin（“Code / Convert Java File to Kotlin File”，或者直接把 Java 代码粘贴到 Kotlin 文件中）、显示编译器生成的字节码（“Tools / Kotlin / Show Kotlin Bytecode”），以及前面提到的草稿文件。</p>
+<h3 id="242-vs-code">2.4.2. <span style="color: #1f4d78">VS Code</span></h3>
+<p><a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">VS Code</span></u></a>是一款免费的跨平台编辑器。要用 Kotlin 编程，请安装由 JetBrains 发布的 <strong>Kotlin</strong> 扩展（进入“Extensions”菜单，搜索“Kotlin”，选择发布者为 JetBrains 的那个）。这个官方扩展 <strong>还很新</strong>：它使用与 IntelliJ IDEA 相同的代码分析引擎，可以导入 Gradle 项目，但还不能提供 IDE 或 JetBrains 的全部功能，而且其功能会随版本变化。请查看扩展的页面，了解安装时它支持什么。就本文档的目的而言，它适合阅读和编辑程序；你始终可以使用正文中给出的 <em>[gradlew]</em> 命令，在内置终端（“Terminal / New Terminal”）中运行它们。</p>
+<p>在 VS Code 中，打开某一章的 <strong>文件夹</strong> （“File / Open Folder”），例如 <em>[kotlin-oct-2026/03-basics]</em> 文件夹。</p>
+<h3 id="243-android-studio">2.4.3. <span style="color: #1f4d78">Android Studio</span></h3>
+<p>Kotlin 也是 Google 推荐用于 Android 应用的语言。<strong>Android Studio</strong>基于 IntelliJ IDEA 构建，专用于这类应用，本文档不涉及。</p>
+<p>在本文档的其余部分，操作使用 <em>[java]</em>、<em>[kotlinc]</em>和 <em>[gradlew]</em>命令来描述，无论使用哪种编辑器，它们都产生相同的结果。</p>
+<h2 id="25-示例程序hellokt-文件">2.5. <span style="color: #2e74b5">示例程序：Hello.kt 文件</span></h2>
+<h3 id="251-程序">2.5.1. <span style="color: #1f4d78">程序</span></h3>
+<p>Kotlin 程序可以只是一个包含名为 <em>[main]</em> 的函数的简单文件，无需声明类。让我们创建如下文件 <em>[Hello.kt]</em> （位于 <em>[02-installation]</em> 示例文件夹中）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">// 第一个 Kotlin 程序：顶层 main 函数</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"1st try with Kotlin 2.4"</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>说明：</p>
+<ul>
+<li>第 1 行：注释。<em>[//]</em> 之后直到行尾的所有内容都会被编译器忽略；</li>
+<li>第 2 行：<em>[main]</em> 函数，即程序的入口点。关键字 <em>[fun]</em> 引入一个函数。它声明在 <strong>文件级别</strong> （“顶层函数”），位于任何类之外；它不需要声明为 <em>[public]</em> （这是 Kotlin 的默认可见性），也不需要接收任何程序参数；</li>
+<li>第 3 行：程序唯一的语句：它在屏幕上打印一行文本。<em>[println]</em> 函数（以及 <em>[print]</em>，它不换行）是 Kotlin 标准库的一部分；它相当于 Java 中的 <strong><em>[System.out.println]</em></strong> 。请注意语句末尾没有分号：在 Kotlin 中分号是可选的，不写。</li>
+</ul>
+<p>这个程序比 Java 课程中的等价程序（<strong><em>[void main() { IO.println(...); }]</em></strong>）略微简单一些，但真正的区别在别处：顶层 <em>[main]</em> 函数自 Kotlin 的第一个版本起就存在，而 Java 直到 Java 25 才支持它。</p>
+<h3 id="252-编译与执行">2.5.2. <span style="color: #1f4d78">编译与执行</span></h3>
+<p>我们用 <em>[kotlinc]</em> 编译程序，指定一个名为 <em>[.jar]</em> 的可执行归档，然后使用 JDK 的 <em>[java]</em> 命令运行它：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>&gt; kotlinc Hello.kt -include-runtime -d hello.jar
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>&gt; java -jar hello.jar
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>1st try with Kotlin 2.4
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong><em>[-d hello.jar]</em></strong>：编译目标。如果它以 <em>[.jar]</em> 结尾，编译器就生成归档；否则它是一个文件夹，编译器把 <em>[.class]</em> 文件存放在其中；</li>
+<li><strong><em>[-include-runtime]</em></strong>：归档中还包含 <strong>Kotlin 标准库</strong> （<em>[kotlin-stdlib]</em>），Kotlin 程序在运行时需要它，还包含指定主类的清单文件。这样，程序就可以通过 <strong><em>[java -jar]</em></strong> 在任何安装了 JDK（或 JRE）的机器上运行，即使该机器没有安装 Kotlin。另一方面，该归档的大小超过 5 MB，主要由标准库构成；</li>
+<li>编译需要几秒钟：Kotlin 编译器本身是一个 Java 程序，必须先启动。Gradle 和 IntelliJ IDEA 通过在两次编译之间保持一个编译器处于活动状态来避免这一开销。</li>
+</ul>
+<p>Kotlin 中没有与 Java 命令 <strong><em>[java Hello.java]</em></strong> 等价的命令，后者一步完成源文件的编译和执行；最接近的等价物是上文介绍的 <em>[.main.kts]</em> 脚本。</p>
+<h3 id="253-编译器生成了什么">2.5.3. <span style="color: #1f4d78">编译器生成了什么</span></h3>
+<p>Java 虚拟机（JVM）只认识类：函数不能存在于类之外。因此，Kotlin 编译器会把文件中的顶层函数 <strong>包装</strong> 进它生成的一个类中，并按文件命名：文件名后面加上 <em>[Kt]</em>。对于 <em>[Hello.kt]</em>，生成的类是 <em>[HelloKt]</em>。JDK 的 <em>[javap]</em> 命令显示它的成员：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>&gt; javap -cp hello.jar HelloKt
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>Compiled from "Hello.kt"
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>public final class HelloKt {
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>  public static final void main();
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>  public static void main(java.lang.String[]);
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>}
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>类 <em>[HelloKt]</em> 是 <em>[public final]</em>；</li>
+<li>它包含我们的 <em>[main]</em> 函数，该函数已变成不带参数的静态方法；</li>
+<li>还有第二个方法 <strong><em>[main(String[])]</em></strong>，由编译器添加：这就是虚拟机知道如何调用的 <strong><em>[public static void main(String[] args)]</em></strong> 方法。它只是调用第一个方法。我们将在第 3 章回到这一机制。</li>
+</ul>
+<p>正是这个类名标识了要执行的程序：<em>[hello.jar]</em> 的清单文件包含这一行 <strong><em>[Main-Class: HelloKt]</em></strong>，也可以写成 <strong><em>[java -cp hello.jar HelloKt]</em></strong>。</p>
+<p>与 Java 不同，对 <strong>文件名</strong>没有限制：它不必是有效的标识符，也不必与其包含的某个类的名称一致。名为 <em>[first-try.kt]</em> 的文件是可以接受的，其生成的类名为 <em>[First_tryKt]</em> （编译器把首字母大写，并把标识符中禁止出现的字符替换为 <em>[_]</em>）。不过按照惯例，文件名以大写字母开头且不含连字符，例如 <em>[Hello.kt]</em> 或 <em>[Basics01.kt]</em>。</p>
+<p>在 Windows 上，用 <em>[println]</em> 写出的带重音符号的字符能在终端中正确显示：虚拟机会把文本转换为终端的编码。源文件必须保存为 UTF-8，这是 VS Code 和 IntelliJ IDEA 的默认编码，也是 Kotlin 编译器始终假定的编码。当程序由 Gradle 启动时（<strong><em>[gradlew run]</em></strong>，或 Gradle 项目中的绿色三角形），情况就不同了：其输出不再是控制台，而是通向 Gradle 的管道，虚拟机随后用历史上的 Windows 编码（windows-1252）对其编码，这样等待 UTF-8 的 IntelliJ IDEA 就会在每个带重音符号的字符处显示一个占位字符（里面带问号的菱形）。课程项目在其 <em>[build.gradle.kts]</em> 文件中解决了这个问题（见下一节）。对于 IntelliJ IDEA 的内置终端（PowerShell），你也可以在会话开始时输入 <strong><em>[chcp 65001]</em></strong> 把控制台切换到 UTF-8，或者通过在“File / Settings / Tools / Terminal / Shell path”中把 <strong><em>[powershell.exe -NoExit -Command &quot;[Console]::OutputEncoding = [Text.Encoding]::UTF8&quot;]</em></strong> 指定为解释器来一劳永逸地解决。</p>
+<p><em>[kotlinc]</em> 命令适用于只使用标准库的单文件程序。一旦程序需要外部库，你就必须下载它——连同它所依赖的库——并把它传递给编译器，然后再传递给虚拟机：这就涉及创建 Gradle 项目。本文档中的所有示例都将这样做。</p>
+<h2 id="26-gradle-项目">2.6. <span style="color: #2e74b5">Gradle 项目</span></h2>
+<h3 id="261-项目结构">2.6.1. <span style="color: #1f4d78">项目结构</span></h3>
+<p><strong>Gradle 项目</strong> 是一个文件夹，其中包含名为 <em>[build.gradle.kts]</em> 的构建文件，以及按标准目录结构组织的源文件。Gradle 构建的根目录还包含名为 <em>[settings.gradle.kts]</em> 的文件，它提供构建的名称和所含项目的列表，以及包装器。示例中的 <em>[02-installation]</em> 文件夹是一个把两个项目 <em>[FirstProgram] 和 [TwoHands]</em> 组合在一起的构建：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span>
+<span class="normal"><a href="#__codelineno-12-19">19</a></span>
+<span class="normal"><a href="#__codelineno-12-20">20</a></span>
+<span class="normal"><a href="#__codelineno-12-21">21</a></span>
+<span class="normal"><a href="#__codelineno-12-22">22</a></span>
+<span class="normal"><a href="#__codelineno-12-23">23</a></span>
+<span class="normal"><a href="#__codelineno-12-24">24</a></span>
+<span class="normal"><a href="#__codelineno-12-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>02-installation/
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>├── gradlew
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>├── gradlew.bat
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a>├── gradle/
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>│   └── wrapper/
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>│       ├── gradle-wrapper.jar
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a>│       └── gradle-wrapper.properties
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a>├── settings.gradle.kts
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>├── build.gradle.kts
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a>├── Hello.kt
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a>├── FirstProgram/
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a>│   ├── build.gradle.kts
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a>│   └── src/
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a>│       └── main/
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>│           └── kotlin/
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a>│               └── first/
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a>│                   └── Main.kt
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a>└── TwoHands/
+<a id="__codelineno-12-19" name="__codelineno-12-19"></a>    ├── build.gradle.kts
+<a id="__codelineno-12-20" name="__codelineno-12-20"></a>    └── src/
+<a id="__codelineno-12-21" name="__codelineno-12-21"></a>        └── main/
+<a id="__codelineno-12-22" name="__codelineno-12-22"></a>            └── kotlin/
+<a id="__codelineno-12-23" name="__codelineno-12-23"></a>                └── twohands/
+<a id="__codelineno-12-24" name="__codelineno-12-24"></a>                    ├── P1.kt
+<a id="__codelineno-12-25" name="__codelineno-12-25"></a>                    └── P2.kt
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><em>[src/main/kotlin]</em> 包含程序的源文件；<em>[src/main/resources]</em> 用于存放要与编译后的类放在一起的数据或配置文件；<em>[src/test/kotlin]</em> 用于存放测试（第 6 章）；</li>
+<li>在 <em>[src/main/kotlin]</em> 之下，文件夹结构与 <strong>包</strong> （第 4 章）的结构相对应：包 [first] 中的文件 <em>[Main.kt]</em> 位于文件夹 [first] 中。与 Java 不同，Kotlin 并不强制这种对应关系，但推荐这样做，我们将始终遵循；</li>
+<li>文件 <em>[Hello.kt]</em> 不属于任何项目：把它放在那里是为了用 <em>[kotlinc]</em> 编译，Gradle 会忽略它。</li>
+</ul>
+<p>独立项目（不与其他项目组合）具有相同的结构，带有自己的 <em>[settings.gradle.kts]</em> 和包装器文件：第 3 章的项目就是这种情况。你可以手动创建这个目录结构，也可以让 IDE 来创建（IntelliJ：“File / New / Project”，选择“Kotlin”作为语言、“Gradle”作为构建系统，并使用 Kotlin DSL）。</p>
+<p>我们将在下一节介绍根目录中的文件。<em>[build.gradle.kts]</em> 文件在 <em>[FirstProgram]</em> 项目中的内容如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span>
+<span class="normal"><a href="#__codelineno-13-23">23</a></span>
+<span class="normal"><a href="#__codelineno-13-24">24</a></span>
+<span class="normal"><a href="#__codelineno-13-25">25</a></span>
+<span class="normal"><a href="#__codelineno-13-26">26</a></span>
+<span class="normal"><a href="#__codelineno-13-27">27</a></span>
+<span class="normal"><a href="#__codelineno-13-28">28</a></span>
+<span class="normal"><a href="#__codelineno-13-29">29</a></span>
+<span class="normal"><a href="#__codelineno-13-30">30</a></span>
+<span class="normal"><a href="#__codelineno-13-31">31</a></span>
+<span class="normal"><a href="#__codelineno-13-32">32</a></span>
+<span class="normal"><a href="#__codelineno-13-33">33</a></span>
+<span class="normal"><a href="#__codelineno-13-34">34</a></span>
+<span class="normal"><a href="#__codelineno-13-35">35</a></span>
+<span class="normal"><a href="#__codelineno-13-36">36</a></span>
+<span class="normal"><a href="#__codelineno-13-37">37</a></span>
+<span class="normal"><a href="#__codelineno-13-38">38</a></span>
+<span class="normal"><a href="#__codelineno-13-39">39</a></span>
+<span class="normal"><a href="#__codelineno-13-40">40</a></span>
+<span class="normal"><a href="#__codelineno-13-41">41</a></span>
+<span class="normal"><a href="#__codelineno-13-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1">// [FirstProgram] 项目：由 JVM 执行的 Kotlin 程序</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="c1">// 用于 JVM 的 Kotlin 插件（其版本在根项目中声明）</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">"jvm"</span><span class="p">)</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="c1">// [application] 插件：run 和 installDist 任务</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="n">application</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="c1">// 项目坐标</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"examples.installation"</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"1.0"</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="c1">// 查找库的仓库</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="n">repositories</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="n">mavenCentral</span><span class="p">()</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="p">}</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a>
+<a id="__codelineno-13-18" name="__codelineno-13-18"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">    </span><span class="c1">// 除插件添加的 Kotlin 标准库外，不使用其他库</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="p">}</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21"></a>
+<a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="n">kotlin</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="w">    </span><span class="c1">// 代码使用 JDK 25 编译和运行</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24"></a><span class="w">    </span><span class="n">jvmToolchain</span><span class="p">(</span><span class="m">25</span><span class="p">)</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25"></a><span class="w">    </span><span class="n">compilerOptions</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26"></a><span class="w">        </span><span class="c1">// 编译器警告视为错误</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27"></a><span class="w">        </span><span class="n">allWarningsAsErrors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28"></a><span class="w">        </span><span class="c1">// 函数参数名保留在字节码中</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29"></a><span class="w">        </span><span class="n">javaParameters</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31"></a><span class="p">}</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32"></a>
+<a id="__codelineno-13-33" name="__codelineno-13-33"></a><span class="n">application</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34"></a><span class="w">    </span><span class="c1">// 包含由 [gradlew run] 运行的 main 函数的类</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35"></a><span class="w">    </span><span class="n">mainClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"first.MainKt"</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36"></a><span class="p">}</span>
+<a id="__codelineno-13-37" name="__codelineno-13-37"></a>
+<a id="__codelineno-13-38" name="__codelineno-13-38"></a><span class="c1">// 在 Windows 上，由 Gradle（run、bootRun 等）启动的程序的屏幕输出以 UTF-8 编码，</span>
+<a id="__codelineno-13-39" name="__codelineno-13-39"></a><span class="c1">// 否则带重音符号的字符在 IntelliJ IDEA 控制台或终端中会出现乱码</span>
+<a id="__codelineno-13-40" name="__codelineno-13-40"></a><span class="n">tasks</span><span class="p">.</span><span class="na">withType</span><span class="o">&lt;</span><span class="n">JavaExec</span><span class="o">&gt;</span><span class="p">().</span><span class="na">configureEach</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-41" name="__codelineno-13-41"></a><span class="w">    </span><span class="n">jvmArgs</span><span class="p">(</span><span class="s">"-Dstdout.encoding=UTF-8"</span><span class="p">,</span><span class="w"> </span><span class="s">"-Dstderr.encoding=UTF-8"</span><span class="p">)</span>
+<a id="__codelineno-13-42" name="__codelineno-13-42"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>说明：</p>
+<ul>
+<li>第 1 行：注释。构建文件是用 Kotlin 编写的：注释的写法与在程序中完全一样。</li>
+<li>第 2–7 行：应用于项目的 <strong>插件</strong> 。它们为 Gradle 提供我们需要的任务：<ul>
+<li>第 4 行：用于 JVM 的 Kotlin 插件。它添加编译 <em>[src/main/kotlin]</em> 中文件的任务，并自动把 Kotlin 标准库添加到项目的依赖中。记法 <strong><em>[kotlin(&quot;jvm&quot;)]</em></strong> 是插件完整标识符 <em>[org.jetbrains.kotlin.jvm]</em> 的简写。这里没有指定其版本，因为该项目属于一个多项目构建，由根项目为所有项目统一设定这一版本（见下一节）。在独立项目中，你应写成 <strong><em>[kotlin(&quot;jvm&quot;) version &quot;2.4.20&quot;]</em></strong>：这个版本决定所使用的 Kotlin 编译器的版本；</li>
+<li>第 6 行：<em>[application]</em> 插件，它添加任务 <em>[run]</em> （运行程序）和 <em>[installDist]</em> （准备可安装版本）；</li>
+</ul>
+</li>
+<li>第 10–11 行：项目、组和版本 <strong>标识符</strong>，它们通过名称（<em>[FirstProgram]</em>，即其文件夹的名称）来标识项目。它们也是另一个项目引用本项目时可以使用的标识符，类似于引用 Maven Central 中某个库的方式（第 6 章）；</li>
+<li>第 14–15 行：Gradle 查找项目库的仓库，这里是 Maven Central；</li>
+<li>第 18–20 行：项目使用的库。除了 Kotlin 插件自动添加的 Kotlin 标准库之外，这个项目不使用任何库；</li>
+<li>第 24 行：项目的工具链：代码针对 Java 25 编译，并由 <strong><em>[gradlew run]</em></strong> 使用 JDK 25 运行，即使 Gradle 本身由另一个 JDK 运行。Gradle 在机器上已安装的 JDK 中查找这个 JDK。如果找不到，它会失败并给出错误消息 <strong><em>[Cannot find a Java installation on your machine ... matching: {languageVersion=25 ...}]</em></strong>，除非构建声明了 <em>[foojay-resolver-convention]</em> 插件——课程中的所有项目都声明了它（见下一节）：这样 Gradle 就会自行下载 JDK 25。在 IntelliJ IDEA 中，你也可以通过“File / Project Structure / SDK / Add SDK / Download JDK”安装这个 JDK；</li>
+<li>第 27 行：编译器警告被视为错误，并会中止编译。Kotlin 编译器会标出许多问题（未使用的变量、不必要的类型转换、多余的 <strong><em>[!!]</em></strong> 运算符等）：我们希望程序不出现任何这类问题；</li>
+<li>第 29 行：编译器在字节码中保留函数参数的名称。一些库会利用这一点，例如 Jackson 用它从 JSON 文档创建对象（第 5 章），Spring 也是如此（第 13 章）；</li>
+<li>第 33–35 行：由 <em>[gradlew run]</em> 执行其 <strong><em>[main]</em></strong> 函数的类。这个名称是编译器为 <em>[first]</em> 包中的 <em>[Main.kt] 文件生成的类的名称：[first.MainKt]</em>；</li>
+<li>第 38–41 行：所有执行 Java 程序的任务（<em>[JavaExec]</em>），例如 <em>[run]</em>，都会从虚拟机收到两个选项：程序的屏幕输出（<strong><em>[System.out]</em></strong>、<strong><em>[System.err]</em></strong>）以 UTF-8 编码。没有它们，程序写出的带重音符号的字符在 Windows 下 IntelliJ IDEA 的控制台中会出现乱码（见上文关于重音符号的说明）。<strong><em>[tasks.withType&lt;JavaExec&gt;()]</em></strong> 指代这种类型的所有任务，而 <strong><em>[configureEach { … }]</em></strong> 配置其中的每一个。所有运行程序的课程项目都包含此配置。</li>
+</ul>
+<p>这个项目不使用任何库。使用库的项目会在 <strong><em>[dependencies]</em></strong> 节中用其坐标声明它，从第 5 章开始我们就会这样做：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"tools.jackson.core:jackson-databind:3.1.5"</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>术语 <em>[implementation]</em> 表示编译和运行程序都需要该库。你还会遇到 <em>[runtimeOnly]</em> （仅执行时需要，例如数据库驱动）和 <em>[testImplementation]</em> （仅测试时需要）。然后，Gradle 会下载 <em>[jackson-databind]</em> 以及它所依赖的库。</p>
+<p>文件 <em>[Main.kt]</em> 包含程序：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">first</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1">// [FirstProgram] 项目的主程序</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"1st try with a Gradle / Kotlin 2.4 project"</span><span class="p">)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 1 行：该文件属于 <em>[first] 包</em>。因此，为该文件生成的类的完整名称是 <em>[first.MainKt]</em>；</li>
+<li>第 4–6 行：<em>[main]</em> 函数，其形式与 <em>[Hello.kt]</em> 中的相同。一个 Kotlin 文件可以包含任意数量的函数和类，无论是否公开：文件名不取决于其内容。</li>
+</ul>
+<h3 id="262-编译与执行">2.6.2. <span style="color: #1f4d78">编译与执行</span></h3>
+<p>命令 <strong><em>[gradlew build]</em></strong> 在 <em>[02-installation]</em> 文件夹中输入，会编译构建中的各个项目（如果它们有测试，还会运行测试）：Gradle 按需下载 Kotlin 插件、编译器和标准库，然后编译 <em>[src/main/kotlin]</em> 中的文件，并为每个项目把生成的类放入 <em>[build/classes/kotlin/main]</em> 文件夹，同时保留包结构（<em>[FirstProgram/build/classes/kotlin/main/first/MainKt.class]</em>）。</p>
+<p><strong><em>[gradlew run]</em></strong> 命令先编译项目，再运行它。在涉及多个项目的构建中，项目由其路径指定，路径前加冒号：<strong><em>[:FirstProgram:run]</em></strong> 是 <em>[run]</em> 任务，属于项目 <em>[FirstProgram]</em>。使用选项 <strong><em>[-q]</em></strong> 时，只显示程序输出：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>&gt; gradlew -q :FirstProgram:run
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a>1st try with a Gradle / Kotlin 2.4 project
+</code></pre></div></td></tr></table></div>
+<p>你也可以进入项目文件夹并输入 <strong><em>[..\gradlew -q run]</em></strong>：Gradle 会向上追溯到根目录中的 <em>[settings.gradle.kts]</em> 文件，并执行当前文件夹中该项目的 <em>[run]</em> 任务。另一方面，在根目录输入 <strong><em>[gradlew run]</em></strong> 会为 <em>[run]</em> 任务执行 <strong>所有</strong> 具有该任务的项目。</p>
+<p>项目编译完成后，你也可以使用 <em>[java]</em> 命令直接运行类，并指定类的位置（在 <em>[FirstProgram]</em> 文件夹中）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>&gt; java -cp build/classes/kotlin/main first.MainKt
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>1st try with a Gradle / Kotlin 2.4 project
+</code></pre></div></td></tr></table></div>
+<p>这在这里可行，是因为该程序在运行时实际上没有使用 Kotlin 标准库中的任何内容：编译器把对 <em>[println]</em> 的调用替换为对 <strong><em>[System.out.println]</em></strong> 的直接调用。然而，例如使用列表（<strong><em>[listOf(1, 2, 3)]</em></strong>）的程序，按这种方式运行会失败，并出现错误 <strong><em>[java.lang.NoClassDefFoundError: kotlin/collections/CollectionsKt]</em></strong>：找不到标准库中的 <em>[CollectionsKt]</em> 类。这时你必须把 <em>[kotlin-stdlib-2.4.20.jar]</em> 归档添加到类路径中（它在 Gradle 缓存中；<em>[lib]</em> 文件夹中的 <em>[kotlinc]</em> 编译器也包含它，名称为 <em>[kotlin-stdlib.jar]</em>）：在 Windows 上为 <strong><em>[java -cp &quot;build/classes/kotlin/main;path/kotlin-stdlib-2.4.20.jar&quot; first.MainKt]</em></strong> （在 Linux 和 macOS 上分隔符是 <em>[:]</em> ）。命令行编译器的 <strong><em>[kotlinr -cp build/classes/kotlin/main first.MainKt]</em></strong> 命令会替我们完成这一工作。</p>
+<p>最简单的方法是使用 <em>[installDist]</em> 任务（来自 <em>[application]</em> 插件），让 Gradle 构建程序及其所需的一切：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>&gt; gradlew -q :FirstProgram:installDist
+</code></pre></div></td></tr></table></div>
+<p>它会创建 <em>[FirstProgram/build/install/FirstProgram]</em> 文件夹，其中包含一个 <em>[lib]</em> 文件夹（项目归档、Kotlin 标准库，以及项目的其他库，如果有的话）和一个 <em>[bin]</em> 文件夹，后者包含两个启动脚本：<em>[FirstProgram]</em> （Linux、macOS）和 <em>[FirstProgram.bat]</em> （Windows），它们用正确的类路径调用 <em>[java]</em> 。程序以这种形式交付，以便复制到另一台运行 JDK 的计算机上：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>&gt; FirstProgram\build\install\FirstProgram\bin\FirstProgram
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a>1st try with a Gradle / Kotlin 2.4 project
+</code></pre></div></td></tr></table></div>
+<p>可以放心删除 <em>[build]</em> 文件夹（<strong><em>[gradlew clean]</em></strong>）：下次编译时会重新创建它。<strong><em>[gradlew build]</em></strong> 命令还会生成项目的归档 <em>[build/libs/FirstProgram-1.0.jar]</em>，其中只包含项目自己的类。</p>
+<h2 id="27-多模块项目">2.7. <span style="color: #2e74b5">多模块项目</span></h2>
+<h3 id="271-多项目构建">2.7.1. <span style="color: #1f4d78">多项目构建</span></h3>
+<p>一个 Gradle 构建可以把多个项目组合在一起，它们被称为其 <strong>子项目</strong> （或模块）。根目录中的 <em>[settings.gradle.kts]</em> 文件列出它们。<em>[02-installation]</em> 文件夹中的该文件如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-20-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-20-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-20-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-20-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-20-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-20-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-20-10">10</a></span>
+<span class="normal"><a href="#__codelineno-20-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="c1">// 第 2 章：将该文件夹中的两个项目组合在一起的 Gradle 构建</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="c1">// 如果机器上找不到 jvmToolchain(25) 所要求的 JDK，Gradle 会自行下载</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">    </span><span class="n">id</span><span class="p">(</span><span class="s">"org.gradle.toolchains.foojay-resolver-convention"</span><span class="p">)</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s">"1.0.0"</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="p">}</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a>
+<a id="__codelineno-20-8" name="__codelineno-20-8"></a><span class="n">rootProject</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"installation"</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10"></a><span class="c1">// 子项目，用其文件夹名称指定</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11"></a><span class="n">include</span><span class="p">(</span><span class="s">"FirstProgram"</span><span class="p">,</span><span class="w"> </span><span class="s">"TwoHands"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 3–6 行：针对构建本身（而不是项目）的插件 <em>[foojay-resolver-convention]</em>：当项目通过 <strong><em>[jvmToolchain(25)]</em></strong> 请求一个 Gradle 在机器上找不到的 JDK 时，Gradle 会从 <a href="https://foojay.io/"><u><span style="color: #0563c1">foojay.io</span></u></a>服务下载它，并存储在缓存中。第一次运行会稍长一些，但学生不再需要安装正确的 JDK。<strong><em>[plugins]</em></strong> 块必须是文件中的第一个块。课程中的所有构建都声明了这个插件；</li>
+<li>第 8 行：构建名称（根项目）。如果没有这一行，它就是文件夹名称；</li>
+<li>第 11 行：子项目，由其文件夹名称标识。子项目可以嵌套得更深：<strong><em>[include(&quot;TaxV5:tax-dao&quot;)]</em></strong> 指的是 <em>[TaxV5/tax-dao]</em> 文件夹中的项目（第 6 章）。</li>
+</ul>
+<p>根项目也有一个名为 <em>[build.gradle.kts]</em> 的文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="c1">// 第 2 章：根项目。Kotlin 插件在此声明并指定版本，但不应用：</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c1">// 由子项目来应用它</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">plugins</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="n">kotlin</span><span class="p">(</span><span class="s">"jvm"</span><span class="p">)</span><span class="w"> </span><span class="n">version</span><span class="w"> </span><span class="s">"2.4.20"</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 3–4 行：声明了 Kotlin 插件及其版本，但没有把它应用到根项目（<strong><em>[apply false]</em></strong>），根项目不包含任何要编译的代码。这个声明使插件对子项目可用，子项目通过 <strong><em>[kotlin(&quot;jvm&quot;)]</em></strong> 应用它而无需重复版本：因此所有子项目使用相同版本的 Kotlin，可以在一个位置修改。如果每个子项目各自声明插件版本，Gradle 就会多次加载它，而 Kotlin 插件不建议这样做。</li>
+</ul>
+<p>在 <em>[02-installation]</em> 文件夹中，<strong><em>[gradlew build]</em></strong> 命令会编译这两个项目；打开该文件夹的 IDE 可以同时看到这两个项目。在第 6 章中，我们将看到一个子项目可以依赖另一个子项目（<strong><em>[implementation(project(&quot;:TaxV5:tax-dao&quot;))]</em></strong>），而在第 10 章到第 13 章中，我们将看到一个构建甚至可以复用另一个构建中的项目（<strong><em>[includeBuild]</em></strong>）。</p>
+<h3 id="272-具有多个-main-函数的项目">2.7.2. <span style="color: #1f4d78">具有多个 <code>main</code> 函数的项目</span></h3>
+<p>一个项目可以包含多个文件，每个文件都有一个 <em>[main]</em> 函数：每个都是可能的入口点，要执行的类在运行时选择。<em>[TwoHands]</em> 项目包含 <em>[twohands]</em> 包中的两个文件。<em>[P1.kt]</em> 文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">package</span><span class="w"> </span><span class="nn">twohands</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="c1">// [TwoHands] 项目的第一个入口点</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="kd">fun</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"main of the P1.kt file"</span><span class="p">)</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>以及文件 <em>[P2.kt]</em>，除名称外与前者完全相同。两个函数都名为 <em>[main]</em> 并且属于同一个包：它们不会冲突，因为它们位于两个不同的类中，即 <em>[twohands.P1Kt]</em> 和 <em>[twohands.P2Kt]</em>。<em>[java]</em> 命令执行指定给它的类（在 <em>[TwoHands]</em> 文件夹中，项目编译完成之后）：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>&gt; java -cp build/classes/kotlin/main twohands.P1Kt
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a>main of the P1.kt file
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>&gt; java -cp build/classes/kotlin/main twohands.P2Kt
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a>main of the P2.kt file
+</code></pre></div></td></tr></table></div>
+<p>对于 <strong><em>[gradlew run]</em></strong> 命令，项目的 <em>[build.gradle.kts]</em> 文件指定要执行的类：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">application</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">    </span><span class="c1">// 由 [gradlew run] 运行的程序由 [main] 属性指定；</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">    </span><span class="c1">// 默认情况下，它是 P2.kt 文件的 main 函数：</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w">    </span><span class="c1">// gradlew -q :TwoHands:run -Pmain=twohands.P1Kt</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="w">    </span><span class="n">mainClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">providers</span><span class="p">.</span><span class="na">gradleProperty</span><span class="p">(</span><span class="s">"main"</span><span class="p">).</span><span class="na">orElse</span><span class="p">(</span><span class="s">"twohands.P2Kt"</span><span class="p">)</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 5 行：要执行的类由 Gradle <strong>属性</strong> <em>[main]</em> 指定，该属性通过选项 <strong><em>[-Pmain=...]</em></strong> 在命令行上提供。<strong><em>[providers.gradleProperty(&quot;main&quot;)]</em></strong> 函数读取这个属性；<strong><em>[orElse(...)]</em></strong> 指定未提供该属性时使用的值：这里是 <em>[twohands.P2Kt]</em> 类。</li>
+</ul>
+<p>文件的其余部分与 <em>[FirstProgram]</em> 的相同，只是增加了对 <em>[run]</em> 任务的配置（<strong><em>[standardInput = System.<code>in</code>]</em></strong>），它把键盘输入传给程序：没有它，由 <strong><em>[gradlew run]</em></strong> 启动的程序就无法读取键盘。</p>
+<p>结果：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a>&gt; gradlew -q :TwoHands:run
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>main of the P2.kt file
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>&gt; gradlew -q :TwoHands:run -Pmain=twohands.P1Kt
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a>main of the P1.kt file
+</code></pre></div></td></tr></table></div>
+<p>这样，你无需修改 <em>[build.gradle.kts]</em> 文件就可以选择要运行的程序。使用 IntelliJ IDEA 时不存在这个问题：每个 <em>[main]</em> 函数在边栏中都有自己的绿色三角形。</p>
+<h3 id="273-每个程序一个包">2.7.3. <span style="color: #1f4d78">每个程序一个包</span></h3>
+<p>后续各章的项目都使用这一机制，因为每个项目都包含许多小程序。为了防止这些程序相互干扰，本文档遵循一个简单的约定：<strong>每个程序有自己的包</strong>，包名是程序名的小写形式，并存放在同名的文件夹中。因此，第 3 章的程序 <em>[Basics04.kt]</em> 就是文件 <em>[03-basics/src/main/kotlin/basics04/Basics04.kt]</em>，它以 <strong><em>[package basics04]</em></strong> 这一行开头；它的类是 <em>[basics04.Basics04Kt]</em>，其执行方式如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>gradlew -q run -Pmain=basics04.Basics04Kt
+</code></pre></div></td></tr></table></div>
+<p>这一约定有两个原因：</p>
+<ul>
+<li>项目中的所有程序一起编译。如果它们在同一个包中，两个程序就不能声明同名的函数或类（函数 <em>[display]</em>、类 [Person]……）：编译器会报告重复声明。每个程序一个包，每个程序就有自己的命名空间；</li>
+<li>由多个文件组成的程序就是包含多个文件的包：在第 4 章中，包 <em>[persons] 包含 [Person.kt] 中的类 [Person]</em> ，以及 <em>[Main.kt]</em> 中的主程序，后者由 <strong><em>[-Pmain=persons.MainKt]</em></strong> 执行。</li>
+</ul>
+<p>每章的正文都会在程序结果之前给出执行该程序的确切命令。我们将在第 3 章再讨论这一结构。</p>
+<h2 id="28-本文档中的示例">2.8. <span style="color: #2e74b5">本文档中的示例</span></h2>
+<p>要运行本文档中的示例：</p>
+<ul>
+<li>下载 <em>[kotlin-oct-2026]</em> 文件夹（链接在文档开头）。它为每一章包含一个文件夹（<em>[02-installation]</em>、<em>[03-basics]</em>、[04-classes]……），这些文件夹中的每一个都是一个 Gradle 构建，并带有其包装器：可以是单个项目，也可以是由其 <em>[settings.gradle.kts]</em> 文件组合在一起的多个子项目；</li>
+<li>在 IntelliJ IDEA 中打开某一章的文件夹（“File / Open”）；然后点击其 <strong>绿色三角形</strong> （位于 <em>[main]</em> 函数旁边）来运行程序；</li>
+<li>或者，在位于该章文件夹的终端中，使用 <strong><em>[gradlew -q run -Pmain=package.ClassKt]</em></strong> 运行程序（如果有多个子项目，则在 <em>[run]</em> 之前加上子项目路径）；每章的正文都给出了确切的命令。</li>
+</ul>
+<p>每章的第一条 <em>[gradlew]</em> 命令需要访问互联网：Gradle 会下载自己的发行版、Kotlin 插件和项目的库，并随后存储在缓存中。</p>
+<p>第 10 章和第 11 章使用名为 MySQL 的数据库；使用 <em>[Laragon]</em> 安装 MySQL 的方法在附录中介绍。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本课程由 Anthropic 的 AI <strong>Claude</strong> 应 <strong>Serge Tahé</strong> 的请求编写，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
